@@ -306,6 +306,10 @@ body,.content{background:#082b50!important;color:#fff}
  #login .loginbox .help{display:block!important;background:transparent!important;border:0!important;box-shadow:none!important;min-height:0!important;padding:0!important}
 }
 </style>
+<style>
+/* Laporan peratus kehadiran bulanan sahaja */
+.monthly-report-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px;margin:22px 0}.monthly-report-card{background:#e0f6ff;border:1px solid #b5e3f1;border-radius:20px;padding:24px;color:#123b60}.monthly-report-card h3{color:#123b60}.monthly-report-percent{font-size:clamp(40px,6vw,65px);font-weight:850;color:#087e73;margin:10px 0}.monthly-report-track{height:13px;border-radius:20px;background:#b1d7e3;overflow:hidden;margin-bottom:14px}.monthly-report-track span{display:block;height:100%;border-radius:20px;background:#13ad94}.monthly-report-card .help{color:#244e66}@media print{.monthly-report-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.monthly-report-card{break-inside:avoid;print-color-adjust:exact;-webkit-print-color-adjust:exact}.monthly-report-percent{font-size:35pt}.monthly-report-track{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+</style>
 </head><body>
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;overflow:hidden"><defs>
 <linearGradient id="oc-blue" x1="0" y1="0" x2=".3" y2="1"><stop stop-color="#96e5ff"/><stop offset=".4" stop-color="#5ebded"/><stop offset="1" stop-color="#2f8ed3"/></linearGradient>
@@ -333,8 +337,37 @@ body,.content{background:#082b50!important;color:#fff}
   </section>
   <p class="public-foot">TABIKA / TASKA KEMAS PARLIMEN ISKANDAR PUTERI</p>
 </section>
-<section id="login" class="login" hidden><div class="welcome"><div class="brand"><span class="sun">☀</span> CILIK <em>IP</em></div><div class="tag" style="margin-top:12px;color:#9dd9df">TABIKA / TASKA KEMAS PARLIMEN ISKANDAR PUTERI</div><div class="school" aria-label="Animasi lautan"></div><button type="button" class="cilik-sound" id="cilikSound" aria-pressed="false">🔇 Bunyi laut</button><p class="small" style="margin-top:30px"></p></div><div class="cilik-ticker" aria-label="Urus kehadiran anak-anak TABIKA / TASKA dengan mudah dan ceria"><div class="cilik-ticker-track"><span>🫧 Urus kehadiran anak-anak TABIKA / TASKA dengan mudah dan ceria 🐠</span><span aria-hidden="true">🫧 Urus kehadiran anak-anak TABIKA / TASKA dengan mudah dan ceria 🐠</span></div></div><div class="loginright"><div class="loginbox"><h2 style="margin-top:0">Jom berlayar, cikgu!</h2><p class="muted">Selamat kembali, cikgu!</p><form id="loginForm"><label class="field">E-mel<input id="email" name="email" type="email" required autocomplete="username" placeholder="E-mel guru"></label><label class="field">Kata laluan<input id="password" name="password" type="password" required autocomplete="current-password" placeholder="Kata laluan akaun guru"></label><button class="btn full" id="loginBtn">Log masuk →</button><p id="loginError" class="notice error" role="alert" hidden></p></form><p class="help" style="margin-top:22px">Akaun disediakan oleh pentadbir. Untuk menetapkan semula kata laluan, hubungi pentadbir projek.</p></div></div></section>
-<div id="app" class="app" hidden><aside class="sidebar"><div><div class="brand"><span class="sun">☀</span> CILIK <em>IP</em></div><p class="small" style="padding:9px 11px 0;color:#a8c6d6">Ruang Guru</p></div><nav id="nav" aria-label="Menu utama"></nav><div class="sidebarfoot">TABIKA HAZIM<br><br><span class="sun">✦</span> Murid ceria.<br>Kehadiran bermakna.</div></aside><div class="content"><header class="topbar"><div><span class="tag" style="color:var(--teal)">Ruang Guru</span><div id="todayLabel" class="small muted"></div></div><div class="row"><button class="btn secondary compact noprint" id="backPage" type="button" hidden>← Kembali</button><button class="btn secondary compact noprint" id="homePage" type="button">🏠 Dashboard</button><div class="avatar">CS</div><div><strong id="teacherName">Cikgu Shahrul</strong><div class="small muted"></div></div><button type="button" class="btn secondary compact" id="settingsShortcut" aria-label="Tetapan">⚙️</button><button class="btn secondary compact" id="logout">Keluar</button></div></header><main id="main"></main><footer>HadirCilik · Lautan Ceria · TABIKA HAZIM 1 & 2 · Masa Malaysia</footer></div></div>
+<section id="login" class="login" hidden><div class="welcome"><div class="brand"><span class="sun">☀</span> CILIK <em>IP</em></div><div class="tag" style="margin-top:12px;color:#9dd9df">TABIKA / TASKA KEMAS PARLIMEN ISKANDAR PUTERI</div><div class="school" aria-label="Animasi lautan"></div><button type="button" class="cilik-sound" id="cilikSound" aria-pressed="false">🔇 Bunyi laut</button><p class="small" style="margin-top:30px"></p></div><div class="cilik-ticker" aria-label="Urus kehadiran anak-anak TABIKA / TASKA dengan mudah dan ceria"><div class="cilik-ticker-track"><span>🫧 Urus kehadiran anak-anak TABIKA / TASKA dengan mudah dan ceria 🐠</span><span aria-hidden="true">🫧 Urus kehadiran anak-anak TABIKA / TASKA dengan mudah dan ceria 🐠</span></div></div><div class="loginright"><div class="loginbox"><h2 style="margin-top:0">Jom berlayar, cikgu!</h2><p class="muted">Selamat kembali, cikgu!</p><form id="loginForm"><label class="field">E-mel<input id="email" name="email" type="email" required autocomplete="username" placeholder="E-mel guru"></label><label class="field">Kata laluan<input id="password" name="password" type="password" required autocomplete="current-password" placeholder="Kata laluan akaun guru"></label><button class="btn full" id="loginBtn">Log masuk →</button><p id="loginError" class="notice error" role="alert" hidden></p></form><p class="help" style="margin-top:16px">Belum ada akaun? <button type="button" id="showRegister" class="btn secondary compact" style="color:#fff!important;-webkit-text-fill-color:#fff!important;background:#123e64!important;border-color:#80d9f0!important">🐚 Daftar TABIKA / TASKA</button></p><p class="help">Setiap TABIKA / TASKA menggunakan satu e-mel dan satu kata laluan. Kelas kedua adalah pilihan.</p></div></div></section>
+
+<section id="registerPortal" class="registration-screen" hidden>
+ <div class="registration-box card stack">
+ <div class="row between"><div><div class="brand">🐳 CILIK <em>IP</em></div><h2>Daftar Akaun TABIKA / TASKA</h2><p class="muted">Satu akaun untuk satu TABIKA / TASKA</p></div><button class="btn secondary compact" id="cancelRegister" type="button">← Log Masuk</button></div>
+ <form id="registerForm" class="stack">
+ <label class="field">Nama TABIKA / TASKA<input name="sekolah" maxlength="150" required placeholder="Contoh: TABIKA KEMAS HAZIM"></label>
+ <div class="formgrid"><label class="field">E-mel akaun<input name="email" type="email" autocomplete="email" required></label><label class="field">Kata laluan (minimum 12 aksara)<input name="password" type="password" minlength="12" autocomplete="new-password" required></label></div>
+ <div class="registration-class"><h3>🐢 Kelas 1 (Wajib)</h3><div class="formgrid"><label class="field">Nama Kelas 1<input name="kelas1" maxlength="150" required></label><label class="field">Nama Guru Kelas 1<input name="guru1" maxlength="150" required></label></div></div>
+ <label class="check"><input type="checkbox" id="hasSecondClass"><strong>🐬 Tambah Kelas 2 (Jika Ada)</strong></label>
+ <div id="secondClassFields" class="registration-class" hidden><div class="formgrid"><label class="field">Nama Kelas 2<input name="kelas2" maxlength="150"></label><label class="field">Nama Guru Kelas 2<input name="guru2" maxlength="150"></label></div></div>
+ <label class="check"><input name="ack" type="checkbox" required><span>Saya diberi kuasa mendaftar akaun bagi TABIKA / TASKA ini dan akan menjaga kerahsiaan data murid.</span></label>
+ <p id="registerError" class="notice error" role="alert" hidden></p><p id="registerSuccess" class="notice" role="status" hidden></p>
+ <button class="btn full" id="registerBtn" type="submit">🐠 Daftar Akaun</button>
+ </form>
+ </div>
+</section>
+<style>
+.registration-screen{min-height:100svh;padding:24px;display:grid;place-items:center;background:linear-gradient(145deg,#d8f8fc,#effbff)}
+.registration-box{width:min(780px,100%);padding:clamp(18px,4vw,34px)}
+.registration-class{background:#eefaff;border:1px solid #d1eaf1;border-radius:16px;padding:17px;display:grid;gap:12px}
+.registration-class h3{margin:0 0 7px}
+</style>
+<style>
+/* Pembetulan butang pendaftaran dan kedudukan anak panah */
+#showRegister{color:#fff!important;-webkit-text-fill-color:#fff!important;background:#123e64!important;border:2px solid #80d9f0!important;white-space:normal;text-align:center}
+#showRegister:hover{background:#075b83!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+.loginright{position:relative;padding-top:78px!important}
+@media(max-width:760px){.loginright{padding-top:84px!important}}
+</style>
+<div id="app" class="app" hidden><aside class="sidebar"><div><div class="brand"><span class="sun">☀</span> CILIK <em>IP</em></div><p class="small" style="padding:9px 11px 0;color:#a8c6d6">Ruang Guru</p></div><nav id="nav" aria-label="Menu utama"></nav><div class="sidebarfoot">CILIK IP<br><br><span class="sun">✦</span> Murid ceria.<br>Kehadiran bermakna.</div></aside><div class="content"><header class="topbar"><div class="row"><button class="btn secondary compact noprint" id="backPage" type="button" hidden>← Kembali</button><div class="avatar">CS</div><div><strong id="teacherName">Cikgu Shahrul</strong><div class="small muted"></div></div><button type="button" class="btn secondary compact" id="settingsShortcut" aria-label="Tetapan">⚙️</button><button class="btn secondary compact" id="logout">Keluar</button><button class="btn secondary compact noprint" id="homePage" type="button">🏠 Dashboard</button></div></header><main id="main"></main><footer>TABIKA / TASKA KEMAS PARLIMEN ISKANDAR PUTERI</footer></div></div>
 <div id="toast" role="status" aria-live="polite"></div>
 <dialog id="manualDialog"><form id="manualForm"><h2>Kemaskini kehadiran</h2><p id="manualName" class="muted"></p><label class="field">Status<select name="status"><option value="hadir">Hadir</option><option value="tidak_hadir">Tidak hadir</option><option value="sakit">Sakit</option><option value="izin">Izin</option></select></label><label class="field">Catatan / sebab pembetulan<textarea name="catatan" required placeholder="Contoh: Disahkan hadir oleh guru"></textarea></label><div class="row"><button class="btn" id="manualSave">Simpan</button><button type="button" class="btn secondary" id="closeManual">Batal</button></div></form></dialog>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
@@ -362,12 +395,37 @@ function initials(n){return String(n).split(' ').slice(0,2).map(x=>x[0]||'').joi
 function studentLabel(s){return `<div class="student"><span class="initial">${esc(initials(s.nama))}</span><div><strong>${esc(s.nama)}</strong><div class="small muted">${esc(className(s.kelas_id))}</div></div></div>`}
 function badge(s){return `<span class="badge ${s==='hadir'?'':s==='tidak_hadir'?'bad':'pending'}">${esc(statusLabels[s]||'Belum direkod')}</span>`}
 function head(title,sub){return `<div class="pagehead"><h1>${title}</h1><p>${sub}</p></div>`}
-function options(selected,all=false){return (all?'<option value="">Semua kelas</option>':'')+state.classes.map(c=>`<option value="${c.id}" ${c.id===selected?'selected':''}>${esc(c.nama)}</option>`).join('')}
+function options(selected,all=false){if(!all&&!selected)selected=state.selectedClass;return (all?'<option value="">Semua kelas</option>':'')+state.classes.map(c=>`<option value="${c.id}" ${c.id===selected?'selected':''}>${esc(c.nama)}</option>`).join('')}
 function visibleOn(s,d){return s.tarikh_mula<=d&&(!s.tarikh_tamat||s.tarikh_tamat>=d)}
-async function baseData(){[state.classes,state.students]=await Promise.all([allRows('hc_kelas',q=>q.order('nama')),allRows('hc_murid',q=>q.order('nama'))])}
-async function refreshDay(d){state.attendance=await allRows('hc_kehadiran',q=>q.eq('tarikh',d).order('created_at'))}
-const pages=[['dashboard','🏝️','Utama'],['add-student','➕','Daftar Murid'],['students','🧒','Senarai Murid'],['reports','📊','Laporan']];
-function drawNav(){ $('#nav').innerHTML=pages.map(([id,icon,label])=>`<button class="navbtn ${(state.page===id||(id==='students'&&(state.page==='enroll'||state.page==='edit-student'))||(id==='dashboard'&&(state.page==='scan'||state.page==='review'))||(id==='reports'&&state.page==='calendar'))?'active':''}" data-page="${id}" ${(state.page===id||(id==='students'&&(state.page==='enroll'||state.page==='edit-student'))||(id==='dashboard'&&(state.page==='scan'||state.page==='review'))||(id==='reports'&&state.page==='calendar'))?'aria-current="page"':''}><span class="navicon" aria-hidden="true">${icon}</span>${label}</button>`).join('');$('#nav').querySelectorAll('button').forEach(b=>b.onclick=()=>{if(b.dataset.page==='students')state.showStudentList=true;go(b.dataset.page)})}
+// CILIK IP 2 kelas: akaun mempunyai beberapa kelas dibenarkan.
+async function baseData(){
+ const links=await allRows('hc_guru_kelas',q=>q.eq('user_id',state.teacher.user_id));
+ const ids=[...new Set(links.map(x=>x.kelas_id))];
+ if(!ids.length)throw Error('Akaun belum dipautkan kepada mana-mana kelas dalam hc_guru_kelas.');
+ state.classes=await allRows('hc_kelas',q=>q.in('id',ids).eq('aktif',true).order('nama'));
+ if(!state.classes.length)throw Error('Tiada kelas aktif dibenarkan untuk akaun ini.');
+ state.allStudents=await allRows('hc_murid',q=>q.in('kelas_id',state.classes.map(c=>c.id)).order('nama'));
+ if(!state.selectedClass||!state.classes.some(c=>c.id===state.selectedClass))state.selectedClass=state.classes[0].id;
+ state.teacher.primaryClassId ||= state.teacher.kelas_id;state.teacher.kelas_id=state.selectedClass; // keserasian kod lama
+ const shared=['dashboard','scan','review'];
+ state.students=shared.includes(state.page)?state.allStudents:state.allStudents.filter(s=>s.kelas_id===state.selectedClass);
+ if(!state.reviewClass||!state.classes.some(c=>c.id===state.reviewClass))state.reviewClass=state.selectedClass;
+ state.reportClass=state.selectedClass;
+ state.calendarClass=state.selectedClass;
+}
+async function refreshDay(d){
+ const ids=state.classes.map(c=>c.id);
+ state.attendance=await allRows('hc_kehadiran',q=>q.in('kelas_id',ids).eq('tarikh',d).order('created_at'));
+}
+state.classEntered=false;
+const pages=[['add-student','➕','Daftar Murid'],['students','🧒','Senarai Murid'],['reports','📊','Laporan']];
+function drawNav(){
+ const nav=$('#nav');
+ const show=Boolean(state.classEntered && state.page!=='dashboard');
+ nav.hidden=!show;
+ nav.setAttribute('aria-hidden',String(!show));
+ if(!show){nav.innerHTML='';return;}
+ nav.innerHTML=pages.map(([id,icon,label])=>`<button class="navbtn ${(state.page===id||(id==='students'&&(state.page==='enroll'||state.page==='edit-student'))||(id==='dashboard'&&(state.page==='scan'||state.page==='review'))||(id==='reports'&&state.page==='calendar'))?'active':''}" data-page="${id}" ${(state.page===id||(id==='students'&&(state.page==='enroll'||state.page==='edit-student'))||(id==='dashboard'&&(state.page==='scan'||state.page==='review'))||(id==='reports'&&state.page==='calendar'))?'aria-current="page"':''}><span class="navicon" aria-hidden="true">${icon}</span>${label}</button>`).join('');$('#nav').querySelectorAll('button').forEach(b=>b.onclick=()=>{if(b.dataset.page==='students')state.showStudentList=true;go(b.dataset.page)})}
 function stopCamera(){state.cameraRequest++;state.scanRun=false;state.cameraMode=null;state.lastCandidate=null;if(state.stream)state.stream.getTracks().forEach(t=>t.stop());state.stream=null;const v=$('#cameraVideo');if(v){v.pause();v.srcObject=null}$('#cameraBox')?.classList.remove('running');const confirm=$('#confirmScan');if(confirm)confirm.disabled=true;}
 let pageHistory=[];
 let skipHistoryOnce=false;
@@ -379,14 +437,14 @@ function updatePageButtons(){
 async function go(page){
  if(!skipHistoryOnce && state.page && state.page!==page)pageHistory.push(state.page);
  skipHistoryOnce=false;
- stopCamera();state.page=page;updatePageButtons();drawNav();const token=++viewToken;$('#main').innerHTML='<div class="loading">Sebentar, memuatkan data…</div>';try{await baseData();if(token!==viewToken)return;switch(page){case'dashboard':await dashboard(token);break;case'students':students();break;case'add-student':studentEditor(false);break;case'edit-student':studentEditor(true);break;case'enroll':await enrollment(token);break;case'scan':await scanPage(token);break;case'review':await review(token);break;case'reports':reports();break;case'calendar':calendar();break;case'settings':await settings(token);break}}catch(e){if(token===viewToken){$('#main').innerHTML=head('Data belum dapat dimuatkan','Semak sambungan dan tetapan projek.')+`<div class="notice error">${esc(errorText(e))}</div><button class="btn" id="retry" style="margin-top:20px">Cuba semula</button>`;$('#retry').onclick=()=>go(page)}}}
-async function enter(session){if(!session)return;pageHistory=[];skipHistoryOnce=true;state.teacher=await must(db.from('hc_guru').select('*').eq('user_id',session.user.id).maybeSingle());if(!state.teacher?.aktif){await db.auth.signOut();throw Error('Akaun ini belum diluluskan sebagai guru aktif dalam jadual hc_guru.')}$('#teacherName').textContent=state.teacher.nama;$('.avatar').textContent=initials(state.teacher.nama);$('#todayLabel').textContent=dateText(today());$('#login').hidden=true;$('#publicPortal').hidden=true;$('#app').hidden=false;await go('dashboard')}
+ stopCamera();if(page==='dashboard')state.classEntered=false;state.page=page;updatePageButtons();drawNav();const token=++viewToken;$('#main').innerHTML='<div class="loading">Sebentar, memuatkan data…</div>';try{await baseData();if(token!==viewToken)return;switch(page){case'dashboard':await dashboard(token);break;case'students':students();break;case'add-student':studentEditor(false);break;case'edit-student':studentEditor(true);break;case'enroll':await enrollment(token);break;case'scan':await scanPage(token);break;case'review':await review(token);break;case'reports':reports();break;case'calendar':calendar();break;case'settings':await settings(token);break}}catch(e){if(token===viewToken){$('#main').innerHTML=head('Data belum dapat dimuatkan','Semak sambungan dan tetapan projek.')+`<div class="notice error">${esc(errorText(e))}</div><button class="btn" id="retry" style="margin-top:20px">Cuba semula</button>`;$('#retry').onclick=()=>go(page)}}}
+async function enter(session){if(!session)return;pageHistory=[];skipHistoryOnce=true;state.teacher=await must(db.from('hc_guru').select('*').eq('user_id',session.user.id).maybeSingle());if(!state.teacher){const {error:setupError}=await db.rpc('hc_daftar_sekolah');if(setupError)throw Error('Pendaftaran profil gagal: '+setupError.message);state.teacher=await must(db.from('hc_guru').select('*').eq('user_id',session.user.id).maybeSingle());}if(!state.teacher?.aktif){await db.auth.signOut();throw Error('Akaun sekolah belum diaktifkan dalam hc_guru.')}$('#teacherName').textContent=state.teacher.nama;$('.avatar').textContent=initials(state.teacher.nama);if($('#todayLabel'))$('#todayLabel').textContent=dateText(today());$('#login').hidden=true;$('#publicPortal').hidden=true;$('#app').hidden=false;await go('dashboard')}
 $('#loginForm').onsubmit=async e=>{e.preventDefault();$('#loginBtn').disabled=true;$('#loginError').hidden=true;try{if(!db)throw Error('Pustaka sambungan gagal dimuatkan. Muat semula halaman dan semak internet.');const {data,error}=await db.auth.signInWithPassword({email:$('#email').value.trim(),password:$('#password').value});if(error)throw error;await enter(data.session);$('#password').value=''}catch(err){$('#loginError').textContent=errorText(err);$('#loginError').hidden=false}finally{$('#loginBtn').disabled=false}};
 $('#backPage').onclick=()=>{const previous=pageHistory.pop()||'dashboard';skipHistoryOnce=true;go(previous)};
-$('#homePage').onclick=()=>{pageHistory=[];skipHistoryOnce=true;go('dashboard')};
+$('#homePage').onclick=()=>{state.classEntered=false;pageHistory=[];skipHistoryOnce=true;go('dashboard')};
 $('#settingsShortcut').onclick=()=>go('settings');
-$('#logout').onclick=async()=>{pageHistory=[];stopCamera();viewToken++;await db.auth.signOut();state.teacher=null;state.students=[];state.faces=[];state.scanDescriptors=[];$('#main').innerHTML='';$('#app').hidden=true;$('#login').hidden=true;$('#publicPortal').hidden=false;$('#password').value=''};
-async function dashboard(token){await refreshDay(today());if(token!==viewToken)return;const active=state.students.filter(s=>s.aktif&&visibleOn(s,today()));const cards=state.classes.filter(c=>c.aktif).map(c=>{const kids=active.filter(s=>s.kelas_id===c.id);const records=state.attendance.filter(r=>r.kelas_id===c.id&&kids.some(s=>s.id===r.murid_id));const present=records.filter(r=>r.status==='hadir').length;const pending=kids.length-records.length;return `<div class="card classcard"><div class="classhead"><span class="classicon" aria-hidden="true">${c.nama.endsWith('1')?'🌱':'🌻'}</span><div><h3>${esc(c.nama)}</h3><p class="small muted">Ringkasan hari ini</p></div></div><div class="stats"><div class="stat"><div class="count">${kids.length}</div><div class="label">Jumlah murid</div></div><div class="stat"><div class="count" style="color:var(--green)">${present}</div><div class="label">Hadir</div></div><div class="stat"><div class="count" style="color:#996b1b">${pending}</div><div class="label">Belum direkod</div></div></div><div class="track"><span style="width:${kids.length?present/kids.length*100:0}%"></span></div><div class="row between"><span class="small muted">${kids.length?Math.round(present/kids.length*100):0}% hadir · ${records.length-present} tidak hadir / sakit / izin</span><button class="btn secondary compact" data-class="${c.id}">Buka kelas →</button></div></div>`}).join('');const recent=state.attendance.filter(a=>a.status==='hadir').sort((a,b)=>(b.masa_masuk||b.created_at).localeCompare(a.masa_masuk||a.created_at)).slice(0,5);$('#main').innerHTML=`<div class="hero"><div class="tag">Setiap wajah, satu potensi</div><h1>Selamat datang,<br><span style="color:var(--teal)">${esc(state.teacher.nama)}.</span></h1><p class="muted" style="margin-top:14px">Hari yang baik bermula dengan kehadiran anak-anak kita.</p><span class="decor" aria-hidden="true">🏫 ☀</span></div><div class="grid2" style="margin-bottom:20px">${cards}</div><div class="grid2"><div class="card scanhero"><span class="tag">Kehadiran melalui wajah</span><h2 style="font-size:30px;margin-top:15px">Satu kamera.<br>Dua kelas.</h2><p>Kenal pasti profil murid dan rekod kehadiran mengikut kelas secara automatik.</p><button class="btn" id="openScan">▣ Mulakan imbasan →</button></div><div class="card"><div class="row between"><h3>Ketibaan terkini</h3><span class="badge blue">Hari ini</span></div>${recent.length?`<table><tbody>${recent.map(r=>{const s=state.students.find(s=>s.id===r.murid_id);return `<tr><td>${s?studentLabel(s):'Profil tidak tersedia'}</td><td>${esc(timeText(r.masa_masuk))}</td></tr>`}).join('')}</tbody></table>`:'<div class="empty">Belum ada rekod ketibaan.<br>Daftar murid dan mulakan kehadiran.</div>'}</div></div>`;$('#openScan').onclick=()=>go('scan');$('#main').querySelectorAll('[data-class]').forEach(b=>b.onclick=()=>{state.reviewClass=b.dataset.class;go('review')})}
+$('#logout').onclick=async()=>{state.classEntered=false;pageHistory=[];stopCamera();viewToken++;await db.auth.signOut();state.teacher=null;state.students=[];state.faces=[];state.scanDescriptors=[];$('#main').innerHTML='';$('#app').hidden=true;$('#login').hidden=true;$('#publicPortal').hidden=false;$('#password').value=''};
+async function dashboard(token){await refreshDay(today());if(token!==viewToken)return;const active=state.students.filter(s=>s.aktif&&visibleOn(s,today()));const cards=state.classes.filter(c=>c.aktif).map(c=>{const kids=active.filter(s=>s.kelas_id===c.id);const records=state.attendance.filter(r=>r.kelas_id===c.id&&kids.some(s=>s.id===r.murid_id));const present=records.filter(r=>r.status==='hadir').length;const pending=kids.length-records.length;return `<div class="card classcard"><div class="classhead"><span class="classicon" aria-hidden="true">${c.nama.endsWith('1')?'🌱':'🌻'}</span><div><h3>${esc(c.nama)}</h3><p class="small muted">Ringkasan hari ini</p></div></div><div class="stats"><div class="stat"><div class="count">${kids.length}</div><div class="label">Jumlah murid</div></div><div class="stat"><div class="count" style="color:var(--green)">${present}</div><div class="label">Hadir</div></div><div class="stat"><div class="count" style="color:#996b1b">${pending}</div><div class="label">Belum direkod</div></div></div><div class="track"><span style="width:${kids.length?present/kids.length*100:0}%"></span></div><div class="row between"><span class="small muted">${kids.length?Math.round(present/kids.length*100):0}% hadir · ${records.length-present} tidak hadir / sakit / izin</span><button class="btn secondary compact" data-class="${c.id}">Buka kelas →</button></div></div>`}).join('');const recent=state.attendance.filter(a=>a.status==='hadir').sort((a,b)=>(b.masa_masuk||b.created_at).localeCompare(a.masa_masuk||a.created_at)).slice(0,5);$('#main').innerHTML=`<div class="hero"><div class="tag">Setiap wajah, satu potensi</div><h1>Selamat datang,<br><span style="color:var(--teal)">${esc(state.teacher.nama)}.</span></h1><p class="muted" style="margin-top:14px">Hari yang baik bermula dengan kehadiran anak-anak kita.</p><span class="decor" aria-hidden="true">🏫 ☀</span></div><div class="grid2" style="margin-bottom:20px">${cards}</div><div class="grid2"><div class="card scanhero"><span class="tag">Kehadiran melalui wajah</span><h2 style="font-size:30px;margin-top:15px">Satu kamera.<br>Dua kelas.</h2><p>Kenal pasti profil murid dan rekod kehadiran mengikut kelas secara automatik.</p><button class="btn" id="openScan">▣ Mulakan imbasan →</button></div><div class="card"><div class="row between"><h3>Ketibaan terkini</h3><span class="badge blue">Hari ini</span></div>${recent.length?`<table><tbody>${recent.map(r=>{const s=state.students.find(s=>s.id===r.murid_id);return `<tr><td>${s?studentLabel(s):'Profil tidak tersedia'}</td><td>${esc(timeText(r.masa_masuk))}</td></tr>`}).join('')}</tbody></table>`:'<div class="empty">Belum ada rekod ketibaan.<br>Daftar murid dan mulakan kehadiran.</div>'}</div></div>`;$('#openScan').onclick=()=>go('scan');$('#main').querySelectorAll('[data-class]').forEach(b=>b.onclick=()=>{state.selectedClass=b.dataset.class;state.reviewClass=b.dataset.class;state.classEntered=true;go('students')})}
 function downloadStudentBackup(s,attendance,faces){
  const backup={sistem:'CILIK IP',tarikh_eksport:new Date().toISOString(),murid:s,kehadiran:attendance,bilangan_rekod_wajah:faces.length};
  const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json;charset=utf-8'});
@@ -458,7 +516,7 @@ function cameraMarkup(){return `<div class="camera" id="cameraBox"><video id="ca
 async function loadModels(){if(modelsReady)return;if(loadPromise)return loadPromise;loadPromise=(async()=>{if(!window.faceapi){await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='https://cdn.jsdelivr.net/npm/@vladmandic/face-api@1.7.15/dist/face-api.js';script.onload=resolve;script.onerror=()=>reject(Error('Pustaka wajah gagal dimuatkan. Semak internet dan cuba lagi.'));document.head.append(script)})}await faceapi.tf.ready();const path='https://cdn.jsdelivr.net/npm/@vladmandic/face-api@1.7.15/model';await Promise.all([faceapi.nets.tinyFaceDetector.loadFromUri(path),faceapi.nets.faceLandmark68Net.loadFromUri(path),faceapi.nets.faceRecognitionNet.loadFromUri(path)]);modelsReady=true})().catch(e=>{loadPromise=null;throw e});return loadPromise}
 async function openCamera(mode){const token=viewToken,request=++state.cameraRequest;const start=$('#startCamera');if(start)start.disabled=true;try{if(!window.isSecureContext)throw Error('Buka sistem melalui HTTPS seperti GitHub Pages untuk menggunakan kamera.');if(!navigator.mediaDevices?.getUserMedia)throw Error('Pelayar ini tidak menyokong kamera. Cuba Chrome terkini.');$('#cameraStatus').textContent='Memuatkan model wajah. Kali pertama mungkin mengambil masa…';await loadModels();if(token!==viewToken||request!==state.cameraRequest)return;const stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user',width:{ideal:640},height:{ideal:480}},audio:false});if(token!==viewToken||request!==state.cameraRequest){stream.getTracks().forEach(t=>t.stop());return}state.stream=stream;state.cameraMode=mode;const v=$('#cameraVideo');v.srcObject=stream;await v.play();if(token!==viewToken||request!==state.cameraRequest)return;$('#cameraBox').classList.add('running');$('#cameraStatus').textContent='Kamera sedia. Pastikan satu wajah jelas.';if(mode==='enroll')$('#captureSample').disabled=false;else{state.scanRun=true;scanLoop(token,request)}}catch(e){if(token===viewToken&&request===state.cameraRequest){if(state.stream){state.stream.getTracks().forEach(t=>t.stop());state.stream=null;}$('#cameraBox')?.classList.remove('running');toast(e.name==='NotAllowedError'?'Akses kamera ditolak. Benarkan kamera dalam tetapan pelayar.':errorText(e));if($('#cameraStatus'))$('#cameraStatus').textContent='Kamera belum tersedia';if(start)start.disabled=false}}}
 async function detect(){const v=$('#cameraVideo');if(!v||!state.stream||v.readyState<2)throw Error('Kamera belum sedia.');return faceapi.detectAllFaces(v,new faceapi.TinyFaceDetectorOptions({inputSize:320,scoreThreshold:.6})).withFaceLandmarks().withFaceDescriptors()}
-async function faceData(){state.faces=(await allRows('hc_wajah',q=>q.order('murid_id'))).map(f=>({...f,descriptors:Array.isArray(f.descriptors)?f.descriptors.filter(d=>Array.isArray(d)&&d.length===128&&d.every(Number.isFinite)):[]}));}
+async function faceData(){state.faces=(await allRows('hc_wajah',q=>q.in('murid_id',state.students.map(s=>s.id).length?state.students.map(s=>s.id):['00000000-0000-0000-0000-000000000000']).order('murid_id'))).map(f=>({...f,descriptors:Array.isArray(f.descriptors)?f.descriptors.filter(d=>Array.isArray(d)&&d.length===128&&d.every(Number.isFinite)):[]}));}
 async function enrollment(token){await faceData();if(token!==viewToken)return;state.samples=[];const kids=state.students.filter(s=>s.aktif);if(!kids.length){$('#main').innerHTML=head('Daftar wajah','Mulakan dengan mendaftarkan profil murid.')+'<div class="card empty">Belum ada murid. <button class="btn" id="addFirst">Daftar murid</button></div>';$('#addFirst').onclick=()=>go('students');return}if(!kids.some(s=>s.id===state.enrollId))state.enrollId=kids[0].id;$('#main').innerHTML=head('📷 Langkah 2 · Daftar / Kemas Kini Wajah','Rakam 3 sampel wajah murid selepas mendapat kebenaran penjaga. Boleh kembali ke senarai murid jika belum bersedia.')+`<div class="row" style="margin-bottom:15px"><button class="btn secondary" id="faceBackToStudents" type="button">← Selesai / Kembali ke Senarai Murid</button></div>`+`<div class="grid2" style="align-items:start"><div class="card stack"><label class="field">Pilih murid<select id="enrollStudent">${kids.map(s=>`<option value="${s.id}" ${s.id===state.enrollId?'selected':''}>${esc(s.nama)} · ${esc(className(s.kelas_id))}</option>`).join('')}</select></label><form id="consentForm" class="stack"><label class="field">Nama penjaga pemberi kebenaran<input name="penjaga" required maxlength="160"></label><label class="field">Rujukan borang kebenaran<input name="rujukan" required maxlength="200" placeholder="Contoh: BORANG-HAZIM1-001"></label><div class="formgrid"><label class="field">Tarikh kebenaran<input name="tarikh" type="date" required value="${today()}" max="${today()}"></label><label class="field">Sah sehingga<input name="tamat" type="date" required min="${today()}" value="${today().slice(0,4)}-12-31"></label></div><label class="check"><input type="checkbox" id="consentCheck" required><span>Saya mengesahkan kebenaran penjaga telah diperoleh untuk pendaftaran wajah bagi tujuan kehadiran.</span></label><div class="row"><button class="btn" id="saveFace" disabled>Simpan pendaftaran</button><button type="button" class="btn danger" id="deleteFace">Padam data wajah</button></div><div id="faceExisting" class="help"></div></form></div><div class="card stack">${cameraMarkup()}<div class="row"><button class="btn" id="startCamera">Buka kamera</button><button class="btn secondary" id="captureSample" disabled>Rakam sampel</button><button class="btn secondary" id="resetSamples">Ulang rakaman</button></div><div class="samples" id="samples"></div><p class="help">Pandang hadapan, kemudian ubah sudut sedikit ke kiri dan kanan. Video tidak dimuat naik; sistem menyimpan vektor ciri wajah untuk padanan. Tiada pengesahan keaslian wajah (liveness) dalam versi ini.</p></div></div>`;$('#faceBackToStudents').onclick=()=>go('students');const fill=()=>{const s=state.students.find(s=>s.id===state.enrollId);const old=state.faces.find(f=>f.murid_id===s.id);$('#consentForm').elements.penjaga.value=old?.nama_penjaga||s.nama_penjaga||'';$('#faceExisting').textContent=old?'Wajah sedia ada. Sah sehingga '+dateText(old.sah_sehingga)+'. Simpan akan menggantikan pendaftaran.':'Wajah belum didaftarkan.';$('#deleteFace').disabled=!old;state.samples=[];drawSamples();if($('#captureSample'))$('#captureSample').disabled=!state.stream;};$('#enrollStudent').onchange=e=>{state.enrollId=e.target.value;$('#consentCheck').checked=false;fill()};fill();$('#startCamera').onclick=()=>openCamera('enroll');$('#captureSample').onclick=async()=>{const b=$('#captureSample');const captureId=state.enrollId,captureView=viewToken;if(state.samples.length>=3)return;b.disabled=true;try{if(!$('#consentForm').reportValidity())return;const results=await detect();if(captureId!==state.enrollId||captureView!==viewToken)return;if(results.length!==1)throw Error(results.length?'Lebih daripada satu wajah. Rakam seorang murid sahaja.':'Wajah belum dikesan. Cuba pencahayaan lebih baik.');const sample=Array.from(results[0].descriptor);if(sample.length!==128||sample.some(x=>!Number.isFinite(x)))throw Error('Rakaman tidak sah. Cuba semula.');if(state.samples.length&&distance(sample,state.samples[0])>.5)throw Error('Rakaman berbeza daripada sampel pertama. Ulang dengan murid yang sama.');if(state.faces.some(f=>f.murid_id!==state.enrollId&&f.descriptors.some(d=>distance(sample,d)<.45)))throw Error('Wajah ini hampir sama dengan pendaftaran murid lain. Semak profil sebelum meneruskan.');state.samples.push(sample);drawSamples();toast('Sampel '+state.samples.length+' daripada 3 berjaya dirakam.')}catch(e){toast(errorText(e))}finally{if(captureView===viewToken&&$('#captureSample'))$('#captureSample').disabled=state.samples.length>=3}};$('#resetSamples').onclick=()=>{state.samples=[];drawSamples();$('#captureSample').disabled=!state.stream};$('#consentForm').onsubmit=async e=>{e.preventDefault();if(state.samples.length!==3)return;const f=new FormData(e.target);if(f.get('tamat')<f.get('tarikh')||f.get('tamat')<today()){toast('Tarikh tamat kebenaran perlu sah.');return}$('#saveFace').disabled=true;try{await must(db.from('hc_wajah').upsert({murid_id:state.enrollId,descriptors:state.samples,model:'faceapi-1.7.15-128d',nama_penjaga:String(f.get('penjaga')).trim(),rujukan_kebenaran:String(f.get('rujukan')).trim(),tarikh_kebenaran:f.get('tarikh'),sah_sehingga:f.get('tamat'),direkod_oleh:state.teacher.user_id,updated_at:new Date().toISOString()},{onConflict:'murid_id'}));toast('Pendaftaran wajah berjaya. Murid sedia untuk imbas kehadiran.');await go('students')}catch(e){toast(errorText(e));$('#saveFace').disabled=false}};$('#deleteFace').onclick=async()=>{if(!confirm('Padam vektor wajah murid ini dan rekod kebenaran pendaftarannya? Kehadiran lama dikekalkan.'))return;try{await must(db.from('hc_wajah').delete().eq('murid_id',state.enrollId));toast('Data wajah dipadam.');await go('enroll')}catch(e){toast(errorText(e))}}}
 function drawSamples(){if(!$('#samples'))return;$('#samples').innerHTML=[0,1,2].map((n)=>`<span class="sample ${state.samples[n]?'done':''}">${state.samples[n]?'✓':'○'} Sampel ${n+1}</span>`).join('');$('#saveFace').disabled=state.samples.length!==3}
 function distance(a,b){if(!a||!b||a.length!==b.length||!a.length||!Array.from(a).every(Number.isFinite)||!Array.from(b).every(Number.isFinite))return Infinity;return Math.sqrt(a.reduce((s,v,i)=>s+(v-b[i])**2,0))}
@@ -475,16 +533,98 @@ $('#closeManual').onclick=()=>$('#manualDialog').close();
 $('#manualForm').onsubmit=async e=>{e.preventDefault();$('#manualSave').disabled=true;try{const f=new FormData(e.target),status=f.get('status'),s=state.manualStudent;const old=state.attendance.find(r=>r.murid_id===s.id);const data={status,catatan:String(f.get('catatan')).trim(),kaedah:'manual',masa_masuk:status==='hadir'?(old?.masa_masuk||(state.reviewDate===today()?new Date().toISOString():null)):null};if(!data.catatan)throw Error('Masukkan sebab atau catatan.');if(old)await must(db.from('hc_kehadiran').update(data).eq('id',old.id));else await must(db.from('hc_kehadiran').insert({...data,murid_id:s.id,kelas_id:s.kelas_id,tarikh:state.reviewDate}));$('#manualDialog').close();toast('Rekod kehadiran disimpan.');await go('review')}catch(e){toast(errorText(e))}finally{$('#manualSave').disabled=false}};
 function monthDates(month){const [y,m]=month.split('-').map(Number);const count=new Date(Date.UTC(y,m,0)).getUTCDate();return Array.from({length:count},(_,i)=>month+'-'+String(i+1).padStart(2,'0'))}
 function weekday(d){return new Date(d+'T12:00:00+08:00').getUTCDay()}
-function reports(){currentReport=null;$('#main').innerHTML=head('Laporan bulanan','Pilih bulan dan kelas. Cetak laporan A4 landskap atau simpan sebagai PDF.')+`<div class="filters noprint"><label class="field">Bulan<input id="reportMonth" type="month" value="${state.reportMonth}"></label><label class="field">Kelas<select id="reportClass">${options(state.reportClass,true)}</select></label><button class="btn" id="makeReport">Papar laporan</button><button class="btn secondary" id="printReport" disabled>▤ Cetak / PDF</button><button class="btn secondary" id="csvReport" disabled>Eksport CSV</button></div><div id="reportOutput"><div class="card empty">Tekan “Papar laporan” untuk melihat rekod sebenar.</div></div>`;$('#makeReport').onclick=makeReport;$('#printReport').onclick=()=>window.print();$('#csvReport').onclick=exportCsv;const invalidate=()=>{currentReport=null;$('#printReport').disabled=true;$('#csvReport').disabled=true;$('#reportOutput').innerHTML='<div class="card empty">Pilihan berubah. Tekan Papar laporan semula.</div>';};$('#reportMonth').onchange=invalidate;$('#reportClass').onchange=invalidate;}
+function reports(){currentReport=null;$('#main').innerHTML=head('Peratus kehadiran bulanan','Pilih bulan dan kelas untuk melihat peratus kehadiran keseluruhan kelas sahaja.')+`<div class="filters noprint"><label class="field">Bulan<input id="reportMonth" type="month" value="${state.reportMonth}"></label><label class="field">Kelas<select id="reportClass" disabled>${options(state.selectedClass,false)}</select></label><button class="btn" id="makeReport">Papar laporan</button><button class="btn secondary" id="printReport" disabled>🖨️ Cetak / PDF</button><button class="btn secondary" id="csvReport" disabled>Eksport CSV</button></div><div id="reportOutput"><div class="card empty">Pilih bulan dan tekan “Papar laporan”.</div></div>`;$('#makeReport').onclick=makeReport;$('#printReport').onclick=()=>window.print();$('#csvReport').onclick=exportCsv;const invalidate=()=>{currentReport=null;$('#printReport').disabled=true;$('#csvReport').disabled=true;$('#reportOutput').innerHTML='<div class="card empty">Pilihan berubah. Tekan Papar laporan semula.</div>'};$('#reportMonth').onchange=invalidate;$('#reportClass').onchange=invalidate}
 let currentReport=null;
-async function makeReport(){const month=$('#reportMonth').value;if(!/^\d{4}-\d{2}$/.test(month)){toast('Pilih bulan dahulu.');return}const token=viewToken;state.reportMonth=month;state.reportClass=$('#reportClass').value;const selectedClass=state.reportClass;currentReport=null;$('#makeReport').disabled=true;$('#printReport').disabled=true;$('#csvReport').disabled=true;try{const dates=monthDates(month),first=dates[0],last=dates.at(-1);const [records,cal]=await Promise.all([allRows('hc_kehadiran',q=>q.gte('tarikh',first).lte('tarikh',last).order('tarikh')),allRows('hc_kalendar',q=>q.gte('tarikh',first).lte('tarikh',last).order('tarikh'))]);if(token!==viewToken||$('#reportMonth')?.value!==month||$('#reportClass')?.value!==selectedClass)return;currentReport={month,dates,records,cal,classes:state.classes.filter(c=>!selectedClass||c.id===selectedClass),students:[...state.students]};$('#reportOutput').innerHTML=reportHtml(currentReport);$('#printReport').disabled=false;$('#csvReport').disabled=false}catch(e){toast(errorText(e))}finally{if($('#makeReport'))$('#makeReport').disabled=false}}
+async function makeReport(){const month=$('#reportMonth').value;if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(month)){toast('Pilih bulan yang sah.');return}const token=viewToken;state.reportMonth=month;state.reportClass=state.selectedClass;const selectedClass=state.selectedClass;currentReport=null;$('#makeReport').disabled=true;$('#printReport').disabled=true;$('#csvReport').disabled=true;try{const dates=monthDates(month),first=dates[0],last=dates.at(-1);const [records,cal]=await Promise.all([allRows('hc_kehadiran',q=>q.eq('kelas_id',selectedClass).gte('tarikh',first).lte('tarikh',last).order('tarikh')),allRows('hc_kalendar',q=>q.eq('kelas_id',selectedClass).gte('tarikh',first).lte('tarikh',last).order('tarikh'))]);if(token!==viewToken||!$('#reportMonth')||$('#reportMonth').value!==month||$('#reportClass').value!==selectedClass)return;currentReport={month,dates,records,cal,classes:state.classes.filter(c=>c.id===selectedClass),students:state.students.filter(s=>s.kelas_id===selectedClass)};$('#reportOutput').innerHTML=reportHtml(currentReport);$('#printReport').disabled=false;$('#csvReport').disabled=false}catch(e){toast(errorText(e))}finally{if($('#makeReport'))$('#makeReport').disabled=false}}
 function reportKids(r,c){const first=r.dates[0],last=r.dates.at(-1);return r.students.filter(s=>(s.kelas_id===c.id&&s.tarikh_mula<=last&&(!s.tarikh_tamat||s.tarikh_tamat>=first))||r.records.some(a=>a.murid_id===s.id&&a.kelas_id===c.id)).sort((a,b)=>a.nama.localeCompare(b.nama))}
-function cellInfo(r,c,s,d){const a=r.records.find(a=>a.murid_id===s.id&&a.kelas_id===c.id&&a.tarikh===d);if(a)return {text:letters[a.status],cls:a.status==='hadir'?'present':'',title:statusLabels[a.status]+(a.masa_masuk?' · '+timeText(a.masa_masuk):'')};if(!visibleOn(s,d))return{text:'–',cls:'holiday',title:'Di luar tempoh pengajian'};const day=r.cal.find(x=>x.kelas_id===c.id&&x.tarikh===d);if(day?.hari_sekolah===false)return{text:'C',cls:'holiday',title:day.catatan||'Cuti'};if(d>today())return{text:'–',cls:'holiday',title:'Tarikh akan datang'};if(day?.hari_sekolah)return{text:'?',cls:'missing',title:'Hari sekolah, belum direkod'};return{text:'·',cls:'holiday',title:'Kalendar belum ditetapkan'}}
-function reportHtml(r){return r.classes.map(c=>{const kids=reportKids(r,c);let pending=0;let unset=0;const conflicts=r.records.filter(a=>a.kelas_id===c.id&&r.cal.some(x=>x.kelas_id===c.id&&x.tarikh===a.tarikh&&!x.hari_sekolah)).length;const rows=kids.map((s,i)=>{const values=r.dates.map(d=>cellInfo(r,c,s,d));pending+=values.filter(v=>v.text==='?').length;unset+=values.filter(v=>v.text==='·').length;const counts={H:0,T:0,S:0,I:0};values.forEach(v=>{if(v.text in counts)counts[v.text]++});return `<tr><td>${i+1}</td><td class="name">${esc(s.nama)}</td>${values.map(v=>`<td class="${v.cls}" title="${esc(v.title)}">${v.text}</td>`).join('')}<td>${counts.H}</td><td>${counts.T+counts.S+counts.I}</td></tr>`}).join('');const rec=r.records.filter(a=>a.kelas_id===c.id);const hadir=rec.filter(a=>a.status==='hadir').length;return `<section class="card report reportpage" style="margin-bottom:22px"><div class="reporthead"><div><div class="tag" style="color:var(--teal)">HadirCilik · Rekod Kehadiran</div><h2>${esc(c.nama)}</h2><p class="muted">${esc(monthText(r.month))} · ${kids.length} murid</p></div><div class="printdate small muted">Dicetak: ${esc(dateText(today()))}<br>Disediakan oleh: ${esc(state.teacher.nama)}</div></div><div class="metricline" style="margin-bottom:16px"><span class="badge">${hadir} rekod hadir</span><span class="badge pending">${pending} belum direkod</span>${unset?`<span class="badge blue">${unset} petak kalendar belum ditetapkan</span>`:''}</div>${conflicts?'<p class="notice noprint" style="margin-bottom:15px">Ada rekod pada tarikh yang ditanda cuti. Semak kalendar; rekod sebenar tetap dipaparkan.</p>':''}<div class="tablewrap"><table class="matrix"><thead><tr><th>Bil</th><th class="name">Nama murid</th>${r.dates.map(d=>`<th>${Number(d.slice(-2))}</th>`).join('')}<th>H</th><th>TH</th></tr></thead><tbody>${rows||`<tr><td colspan="${r.dates.length+4}">Tiada murid bagi bulan ini.</td></tr>`}</tbody></table></div><p class="legend">H = Hadir · T = Tidak hadir · S = Sakit · I = Izin · TH = T + S + I · ? = Belum direkod · C = Cuti · · = Kalendar belum ditetapkan · – = Di luar tempoh / akan datang.<br>Petak belum direkod dan kalendar belum ditetapkan tidak dianggap sebagai tidak hadir. Semak kalendar kelas sebelum mengesahkan laporan.</p><div class="signatures"><div>Disediakan oleh<br>${esc(state.teacher.nama)}</div><div>Disemak / Disahkan oleh<br>Nama: ____________________</div></div></section>`}).join('')}
+/* Peratus kelas = hadir / jumlah peluang hadir pada hari persekolahan yang telah disahkan.
+   Rekod belum diisi dikira sebagai peluang hadir, bukan kehadiran. Hari kalendar
+   belum ditetapkan tidak diandaikan sebagai hari persekolahan. */
+function monthlyClassStats(r,c){const kids=reportKids(r,c),schoolDays=r.dates.filter(d=>r.cal.some(x=>x.kelas_id===c.id&&x.tarikh===d&&x.hari_sekolah===true)&&d<=today());const known=new Map(r.records.filter(a=>a.kelas_id===c.id).map(a=>[a.murid_id+'|'+a.tarikh,a]));let opportunities=0,present=0,missing=0,absent=0;for(const d of schoolDays){for(const s of kids){if(!visibleOn(s,d))continue;opportunities++;const a=known.get(s.id+'|'+d);if(a?.status==='hadir')present++;else if(a&&['tidak_hadir','sakit','izin'].includes(a.status))absent++;else missing++}}const unsetDays=r.dates.filter(d=>d<=today()&&!r.cal.some(x=>x.kelas_id===c.id&&x.tarikh===d)).length;return {name:c.nama,schoolDays:schoolDays.length,students:kids.length,opportunities,present,absent,missing,unsetDays,percent:opportunities?present/opportunities*100:null}}
+function reportHtml(r){const stats=r.classes.map(c=>monthlyClassStats(r,c));return `<section class="card report" style="margin-bottom:22px"><div class="reporthead"><div><div class="tag" style="color:var(--teal)">CILIK IP · Laporan Kehadiran</div><h2>Peratus Kehadiran Bulanan</h2><p class="muted">${esc(monthText(r.month))}</p></div><div class="printdate small muted">Dicetak: ${esc(dateText(today()))}<br>Disediakan oleh: ${esc(state.teacher.nama)}</div></div><div class="monthly-report-grid">${stats.map(x=>`<article class="monthly-report-card"><h3>${esc(x.name)}</h3><div class="monthly-report-percent">${x.percent===null?'—':x.percent.toFixed(1)+'%'}</div><div class="monthly-report-track"><span style="width:${x.percent===null?0:x.percent.toFixed(2)}%"></span></div><p class="help">${x.present} hadir daripada ${x.opportunities} peluang hadir · ${x.schoolDays} hari persekolahan</p>${x.missing?`<p class="notice" style="margin-top:12px">${x.missing} rekod belum diisi — peratus masih sementara.</p>`:''}${x.unsetDays?`<p class="notice" style="margin-top:10px">${x.unsetDays} tarikh belum ditetapkan dalam kalendar. Semak kalendar sebelum sahkan laporan.</p>`:''}${!x.opportunities?'<p class="help">Tiada hari persekolahan / peluang hadir yang disahkan untuk bulan ini.</p>':''}</article>`).join('')||'<p class="empty">Tiada kelas untuk dipaparkan.</p>'}</div><p class="legend">Formula: Jumlah hadir ÷ jumlah peluang hadir × 100. Hanya hari persekolahan yang ditetapkan dalam kalendar dan telah berlalu/termasuk hari ini diambil kira. Rekod belum diisi tidak dianggap hadir. Peratus sementara jika rekod belum lengkap.</p><div class="signatures"><div>Disediakan oleh<br>${esc(state.teacher.nama)}</div><div>Disemak / Disahkan oleh<br>Nama: ____________________</div></div></section>`}
 function csvSafe(v){let s=String(v??'');if(/^[=+@\-\t\r\n]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"'}
-function exportCsv(){if(!currentReport)return;const r=currentReport;const rows=[['Kelas','Nama murid',...r.dates,'Jumlah hadir','Jumlah tidak hadir (T/S/I)']];for(const c of r.classes)for(const s of reportKids(r,c)){const v=r.dates.map(d=>cellInfo(r,c,s,d).text);rows.push([c.nama,s.nama,...v,v.filter(x=>x==='H').length,v.filter(x=>['T','S','I'].includes(x)).length])}const blob=new Blob(['\ufeff'+rows.map(row=>row.map(csvSafe).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8'});const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download='HadirCilik-'+r.month+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(u),2000)}
+function exportCsv(){if(!currentReport)return;const r=currentReport;const rows=[['Bulan','Kelas','Hari persekolahan','Peluang hadir','Jumlah hadir','Peratus kehadiran (%)','Rekod belum diisi','Tarikh kalendar belum ditetapkan']];for(const c of r.classes){const x=monthlyClassStats(r,c);rows.push([r.month,x.name,x.schoolDays,x.opportunities,x.present,x.percent===null?'':x.percent.toFixed(1),x.missing,x.unsetDays])}const blob=new Blob(['\ufeff'+rows.map(row=>row.map(csvSafe).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8'});const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download='CILIK-IP-Peratus-Kehadiran-'+r.month+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(u),2000)}
 function calendar() {if(!state.calendarClass)state.calendarClass=state.classes[0]?.id||'';$('#main').innerHTML=head('Kalendar persekolahan','Tetapkan hari sekolah dan cuti supaya laporan bulanan dibaca dengan tepat.')+`<div class="filters"><label class="field">Bulan<input type="month" id="calMonth" value="${state.calendarMonth}"></label><label class="field">Kelas<select id="calClass">${options(state.calendarClass)}</select></label><button class="btn" id="loadCalendar">Papar kalendar</button></div><div class="card stack"><div class="row between"><h3 id="calTitle">Kalendar kelas</h3><button class="btn secondary compact" id="weekdays" disabled>Tanda Isnin–Jumaat</button></div><p class="help">Tanda ✓ pada hari persekolahan. Buang tanda pada cuti sekolah dan cuti umum. Pilihan Isnin–Jumaat ialah cadangan sahaja.</p><div class="calendargrid" id="calendarDays"></div><div class="row"><button class="btn" id="saveCalendar" disabled>Simpan kalendar</button><span class="help" id="calNotice">Pilih bulan dan tekan Papar kalendar.</span></div></div>`;let loaded=null;const calView=viewToken;const invalidateCalendar=()=>{loaded=null;$('#saveCalendar').disabled=true;$('#weekdays').disabled=true;$('#calendarDays').innerHTML='';$('#calNotice').textContent='Pilihan berubah. Tekan Papar kalendar.';};$('#calMonth').onchange=invalidateCalendar;$('#calClass').onchange=invalidateCalendar;$('#loadCalendar').onclick=async()=>{const m=$('#calMonth').value,c=$('#calClass').value;if(!m||!c)return;$('#loadCalendar').disabled=true;try{const dates=monthDates(m);const records=await allRows('hc_kalendar',q=>q.eq('kelas_id',c).gte('tarikh',dates[0]).lte('tarikh',dates.at(-1)).order('tarikh'));if(state.page!=='calendar'||viewToken!==calView||$('#calMonth')?.value!==m||$('#calClass')?.value!==c)return;state.calendarMonth=m;state.calendarClass=c;loaded={month:m,classId:c,dates};$('#calTitle').textContent=className(c)+' · '+monthText(m);const names=['Ahd','Isn','Sel','Rab','Kha','Jum','Sab'];$('#calendarDays').innerHTML=names.map(n=>`<div class="weeklabel">${n}</div>`).join('')+'<div style="grid-column:span '+(weekday(dates[0])||1)+';'+(weekday(dates[0])===0?'display:none':'')+'"></div>'+dates.map(d=>{const found=records.find(r=>r.tarikh===d);return `<label class="day ${found?.hari_sekolah?'schoolday':''}"><strong>${Number(d.slice(-2))}</strong><input type="checkbox" data-day="${d}" ${found?.hari_sekolah?'checked':''} aria-label="Hari sekolah ${esc(dateText(d))}"><span>${found?'Disimpan':'Belum set'}</span></label>`}).join('');$('#calendarDays').querySelectorAll('input').forEach(i=>i.onchange=()=>i.parentElement.classList.toggle('schoolday',i.checked));$('#saveCalendar').disabled=false;$('#weekdays').disabled=false;$('#calNotice').textContent='Semak cuti sebelum simpan. Menyimpan menetapkan semua tarikh dalam bulan ini.'}catch(e){toast(errorText(e))}finally{if($('#loadCalendar'))$('#loadCalendar').disabled=false}};$('#weekdays').onclick=()=>{$('#calendarDays').querySelectorAll('input').forEach(i=>{const w=weekday(i.dataset.day);i.checked=w>=1&&w<=5;i.parentElement.classList.toggle('schoolday',i.checked)})};$('#saveCalendar').onclick=async()=>{if(!loaded)return;$('#saveCalendar').disabled=true;try{const data=Array.from($('#calendarDays').querySelectorAll('input')).map(i=>({kelas_id:loaded.classId,tarikh:i.dataset.day,hari_sekolah:i.checked}));await must(db.from('hc_kalendar').upsert(data,{onConflict:'kelas_id,tarikh'}));toast('Kalendar kelas berjaya disimpan.');$('#calNotice').textContent='Kalendar disimpan untuk '+monthText(loaded.month)}catch(e){toast(errorText(e))}finally{if($('#saveCalendar'))$('#saveCalendar').disabled=false}}}
-async function settings(token){const audit=await must(db.from('hc_audit').select('masa,tindakan,user_id,rekod_id').order('masa',{ascending:false}).limit(20));if(token!==viewToken)return;$('#main').innerHTML=head('Tetapan & maklumat','Akses guru, penjagaan data dan jejak perubahan kehadiran.')+`<div class="grid2"><div class="card stack"><h3>Akaun guru</h3><p><strong>${esc(state.teacher.nama)}</strong><br><span class="badge">Guru aktif</span></p><h3>Kelas tersedia</h3>${state.classes.map(c=>`<div class="row between"><span>${esc(c.nama)}</span><span class="badge blue">${c.aktif?'Aktif':'Tidak aktif'}</span></div>`).join('')}<p class="help">Guru aktif yang diluluskan mempunyai akses kepada kedua-dua kelas. Penambahan atau penamatan akses guru dibuat oleh pentadbir dalam Supabase.</p></div><div class="card stack"><h3>Pengurusan wajah</h3><p class="help">Kebenaran penjaga direkodkan semasa pendaftaran. Pendaftaran tamat tempoh tidak digunakan untuk padanan. Data tidak dipadam secara berjadual dalam versi ini; guru boleh memadamnya pada halaman Daftar Wajah.</p><button class="btn secondary" id="manageFace">Buka pendaftaran wajah</button><h3>Penggunaan sistem</h3><p class="help">Gunakan melalui GitHub Pages (HTTPS). Model wajah dimuatkan dari CDN; internet diperlukan. Uji dahulu menggunakan data percubaan. Jangan jadikan imbasan sebagai satu-satunya kaedah kehadiran.</p><h3>Cetakan bulanan</h3><p class="help">Buka Laporan → pilih bulan dan kelas → Papar laporan → Cetak / PDF. Pilih A4 landskap dalam dialog cetakan. Eksport CSV boleh dibuka dalam Excel.</p></div><div class="card span2"><h3>Jejak perubahan terkini</h3><div class="tablewrap"><table class="audit"><thead><tr><th>Masa</th><th>Tindakan</th><th>ID guru</th></tr></thead><tbody>${audit.map(a=>`<tr><td>${esc(new Intl.DateTimeFormat('ms-MY',{timeZone:'Asia/Kuala_Lumpur',dateStyle:'short',timeStyle:'short'}).format(new Date(a.masa)))}</td><td>${esc(a.tindakan)}</td><td>${esc(a.user_id||'Pentadbir')}</td></tr>`).join('')||'<tr><td colspan="3">Belum ada perubahan kehadiran.</td></tr>'}</tbody></table></div></div></div>`;$('#manageFace').onclick=()=>go('enroll')}
+async function settings(token){
+ const t=state.teacher;
+ const audit=await must(db.from('hc_audit').select('masa,tindakan,user_id,rekod_id').eq('user_id',t.user_id).order('masa',{ascending:false}).limit(20));
+ if(token!==viewToken)return;
+ $('#main').innerHTML=head('Profil sekolah & keselamatan','Profil guru bagi kelas yang dipilih.')+`
+ <div class="grid2">
+  <div class="card stack"><h3>🏫 Profil sekolah</h3>
+   <p class="help">Kelas yang sedang dipilih.</p>
+   <form id="schoolProfile" class="stack"><label class="field">Nama TABIKA / TASKA<input name="sekolah" maxlength="150" required value="${esc(t.nama)}"></label><label class="field">Nama Kelas<input name="kelas" maxlength="150" required value="${esc(className(state.selectedClass||t.kelas_id))}"></label><label class="field">Nama Guru Kelas<input name="guru1" maxlength="150" required value="${esc(((t.primaryClassId||t.kelas_id)===state.selectedClass?t.nama_guru_1:t.nama_guru_2)||'')}"></label>
+    
+    <button class="btn" type="submit">💾 Simpan nama guru</button>
+   </form><p class="help">Setiap kelas mempunyai seorang guru yang dipaparkan pada halaman kelas tersebut.</p>
+  </div>
+  <div class="card stack"><h3>🔐 Tukar kata laluan</h3>
+   <p class="help">Kata laluan baharu akan digunakan untuk akaun ini.</p>
+   <form id="schoolPassword" class="stack">
+    <label class="field">Kata laluan semasa<input type="password" name="oldpass" autocomplete="current-password" required></label>
+    <label class="field">Kata laluan baharu<input type="password" name="newpass" autocomplete="new-password" minlength="12" required></label>
+    <label class="field">Sahkan kata laluan baharu<input type="password" name="confirm" autocomplete="new-password" minlength="12" required></label>
+    <button class="btn" type="submit">🔑 Tukar kata laluan</button>
+   </form><p class="help">Gunakan sekurang-kurangnya 12 aksara. Simpan kata laluan dengan selamat.</p>
+  </div>
+  <div class="card span2 stack"><h3>🛡️ Akses data</h3>
+   <p>Anda hanya boleh mengurus <strong>${esc(className(state.selectedClass||t.kelas_id))}</strong>. Data kelas lain perlu dilindungi oleh polisi RLS Supabase.</p>
+   <p class="help">Pendaftaran akaun baharu tidak dibuka kepada umum. Akaun setiap sekolah disediakan oleh pengurus projek melalui Supabase.</p>
+   <button class="btn secondary" id="manageFace">📷 Urus wajah murid kelas ini</button>
+  </div>
+  <div class="card span2"><h3>Jejak perubahan akaun ini</h3><div class="tablewrap"><table class="audit"><thead><tr><th>Masa</th><th>Tindakan</th></tr></thead><tbody>${audit.map(a=>`<tr><td>${esc(new Intl.DateTimeFormat('ms-MY',{timeZone:'Asia/Kuala_Lumpur',dateStyle:'short',timeStyle:'short'}).format(new Date(a.masa)))}</td><td>${esc(a.tindakan)}</td></tr>`).join('')||'<tr><td colspan="2">Belum ada rekod.</td></tr>'}</tbody></table></div></div>
+ </div>`;
+ $('#manageFace').onclick=()=>go('enroll');
+ $('#schoolProfile').onsubmit=async e=>{e.preventDefault();const f=e.currentTarget,btn=f.querySelector('button');btn.disabled=true;try{
+ const sekolah=f.elements.sekolah.value.trim(),kelas=f.elements.kelas.value.trim(),guru=f.elements.guru1.value.trim();
+ if(!sekolah||!kelas||!guru)throw Error('Semua nama mesti diisi.');
+ const {error}=await db.rpc('hc_kemaskini_profil_kelas',{p_kelas_id:state.selectedClass,p_sekolah:sekolah,p_nama_kelas:kelas,p_nama_guru:guru});
+ if(error)throw error;
+ t.nama=sekolah;const idx=state.classes.findIndex(c=>c.id===state.selectedClass);t[(t.primaryClassId||t.kelas_id)===state.selectedClass?'nama_guru_1':'nama_guru_2']=guru;
+ state.classes[idx].nama=kelas;toast('Nama TABIKA, kelas dan guru berjaya disimpan.');await go('settings');
+ }catch(err){toast(errorText(err))}finally{btn.disabled=false}};
+ if(state.classes.length===1){const section=$('#schoolProfile');const add=document.createElement('div');add.className='registration-class';add.innerHTML='<h3>🐬 Kelas 2 (Jika Ada)</h3><form id="addSecondClass" class="stack"><label class="field">Nama Kelas 2<input name="kelas" maxlength="150" required></label><label class="field">Nama Guru Kelas 2<input name="guru" maxlength="150" required></label><button class="btn" type="submit">+ Tambah Kelas 2</button></form>';section.after(add);$('#addSecondClass').onsubmit=async e=>{e.preventDefault();const f=e.currentTarget,b=f.querySelector('button');b.disabled=true;try{const {error}=await db.rpc('hc_tambah_kelas',{p_nama_kelas:f.elements.kelas.value.trim(),p_nama_guru:f.elements.guru.value.trim()});if(error)throw error;toast('Kelas kedua berjaya ditambah.');await go('settings')}catch(err){toast(errorText(err))}finally{b.disabled=false}};}
+ $('#schoolPassword').onsubmit=async e=>{e.preventDefault();const f=e.currentTarget,btn=f.querySelector('button');const old=f.elements.oldpass.value,pass=f.elements.newpass.value,confirm=f.elements.confirm.value;
+ if(pass!==confirm){toast('Pengesahan kata laluan tidak sama.');return}if(pass.length<12){toast('Gunakan sekurang-kurangnya 12 aksara.');return}if(pass===old){toast('Kata laluan baharu mesti berbeza.');return}
+ btn.disabled=true;try{
+ const email=(await db.auth.getUser()).data.user?.email;if(!email)throw Error('E-mel akaun tidak ditemui.');
+ const checked=await db.auth.signInWithPassword({email,password:old});if(checked.error)throw Error('Kata laluan semasa tidak tepat.');
+ const changed=await db.auth.updateUser({password:pass});if(changed.error)throw changed.error;
+ f.reset();toast('Kata laluan berjaya ditukar. Maklumkan guru kedua.');
+ }catch(err){toast(errorText(err))}finally{btn.disabled=false}};
+}
+
+// CILIK IP: pendaftaran sendiri, kelas kedua pilihan, dan profil kelas tersendiri.
+function openRegistration(show){
+ $('#registerPortal').hidden=!show;$('#login').hidden=show;$('#publicPortal').hidden=true;
+}
+$('#showRegister').addEventListener('click',()=>openRegistration(true));
+$('#cancelRegister').addEventListener('click',()=>openRegistration(false));
+$('#hasSecondClass').addEventListener('change',e=>{
+ const on=e.target.checked;$('#secondClassFields').hidden=!on;
+ for(const n of ['kelas2','guru2'])$('#registerForm').elements[n].required=on;
+});
+$('#registerForm').addEventListener('submit',async e=>{
+ e.preventDefault();const f=e.currentTarget,btn=$('#registerBtn'),error=$('#registerError'),success=$('#registerSuccess');
+ error.hidden=true;success.hidden=true;btn.disabled=true;
+ try{
+  if(!db)throw Error('Sambungan Supabase belum tersedia.');
+  const v=n=>f.elements[n].value.trim();const two=$('#hasSecondClass').checked;
+  const meta={cilik_sekolah:v('sekolah'),cilik_kelas1:v('kelas1'),cilik_guru1:v('guru1'),cilik_kelas2:two?v('kelas2'):'',cilik_guru2:two?v('guru2'):''};
+  if(Object.values(meta).some(x=>x.length>150))throw Error('Nama terlalu panjang.');
+  if(two&&meta.cilik_kelas1.toLocaleLowerCase()===meta.cilik_kelas2.toLocaleLowerCase())throw Error('Nama kedua-dua kelas mesti berbeza.');
+  const {data,error:signErr}=await db.auth.signUp({email:v('email'),password:f.elements.password.value,options:{data:meta}});
+  if(signErr)throw signErr;
+  if(!data.user)throw Error('Pendaftaran belum berjaya. Cuba semula.');
+  if(data.session){
+   const {error:setupErr}=await db.rpc('hc_daftar_sekolah');
+   if(setupErr)throw Error('Akaun dicipta tetapi profil belum siap: '+setupErr.message+'; jalankan SQL pemasangan dahulu.');
+   success.textContent='Akaun berjaya didaftarkan. Sila log masuk.';
+  }else success.textContent='Pendaftaran diterima. Semak e-mel pengesahan, kemudian log masuk menggunakan akaun baharu.';
+  success.hidden=false;f.reset();$('#secondClassFields').hidden=true;
+ }catch(err){error.textContent=errorText(err);error.hidden=false}finally{btn.disabled=false}
+});
+
 window.addEventListener('pagehide',stopCamera);document.addEventListener('visibilitychange',()=>{if(document.hidden&&state.stream){stopCamera();if($('#cameraStatus'))$('#cameraStatus').textContent='Kamera dihentikan kerana halaman tidak aktif. Buka semula halaman imbasan.';if($('#startCamera'))$('#startCamera').disabled=false}});
 (async()=>{try{if(!window.supabase)throw Error('Pustaka Supabase gagal dimuatkan. Semak internet dan muat semula.');db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY,{auth:{persistSession:false,autoRefreshToken:true,detectSessionInUrl:false}});const {data,error}=await db.auth.getSession();if(error)throw error;if(data.session)await enter(data.session)}catch(e){$('#loginError').textContent=errorText(e);$('#loginError').hidden=false}})();
 </script>
@@ -633,7 +773,7 @@ function next(){if(!solved)return;if(index<9){index++;render();}else{cancelVoice
 function speak(){if(!('speechSynthesis'in window)){if(!get('mathPlay').hidden)get('mathFeedback').textContent='Suara tidak tersedia pada pelayar ini. Cikgu boleh bacakan arahan.';return;}cancelVoice();const text=!get('mathPlay').hidden?questionText(questions[index]):!get('mathEnd').hidden?'Syabas! Adik berjaya menjawab sepuluh soalan.':'Jom kira ikan bersama! Pilih tahap dan tekan Mula Belajar.';const u=new SpeechSynthesisUtterance(text);u.lang='ms-MY';u.rate=.85;const voice=window.speechSynthesis.getVoices().find(v=>/^ms(-|_)/i.test(v.lang));if(voice)u.voice=voice;window.speechSynthesis.speak(u);}
 window.hcPublicMath=open;get('mathExit').onclick=close;get('mathBegin').onclick=start;get('mathNext').onclick=next;get('mathAgain').onclick=start;get('mathSpeak').onclick=speak;for(const id of ['mathChoose','mathChange'])get(id).onclick=()=>{cancelVoice();show('mathSetup');get('mathBegin').focus()};document.addEventListener('visibilitychange',()=>{if(document.hidden&&opened)cancelVoice()});
 box.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();close()}if(e.key==='Tab'){const nodes=Array.from(box.querySelectorAll('button:not(:disabled),select')).filter(n=>n.getClientRects().length);const first=nodes[0],last=nodes.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
-const previousDashboard=dashboard;dashboard=async function(token){await previousDashboard(token);if(token!==viewToken)return;const entry=document.querySelector('.game-entry');if(!entry)return;entry.querySelector('h3').textContent='🎮 Sudut Main & Belajar';entry.querySelector('p').textContent='Pilih Ikan Lapar atau belajar nombor bersama ikan.';const old=entry.querySelector('button');old.textContent='🐠 Ikan Lapar';const actions=document.createElement('div');actions.className='math-launchers';old.replaceWith(actions);actions.append(old);const b=document.createElement('button');b.type='button';b.className='btn';b.textContent='🔢 Misi Kira Ikan';b.onclick=open;actions.append(b);};
+const previousDashboard=dashboard;dashboard=async function(token){await previousDashboard(token);if(token!==viewToken)return;const entry=document.querySelector('.game-entry');if(!entry)return;const heading=entry.querySelector('h3');if(heading)heading.textContent='🎮 Sudut Main & Belajar';const paragraph=entry.querySelector('p');if(paragraph)paragraph.textContent='Pilih Ikan Lapar atau belajar nombor bersama ikan.';const old=entry.querySelector('button');if(!old)return;old.textContent='🐠 Ikan Lapar';const actions=document.createElement('div');actions.className='math-launchers';old.replaceWith(actions);actions.append(old);const b=document.createElement('button');b.type='button';b.className='btn';b.textContent='🔢 Misi Kira Ikan';b.onclick=open;actions.append(b);};
 })();
 </script>
 
@@ -799,15 +939,15 @@ const previousDashboard=dashboard;dashboard=async function(token){await previous
  const $=s=>document.querySelector(s);
  const portal=$('#publicPortal'),login=$('#login'),games=$('#publicGames');
  $('#publicTeacher').addEventListener('click',()=>{portal.hidden=true;login.hidden=false;$('#email')?.focus();window.scrollTo(0,0)});
- const back=document.createElement('button');back.type='button';back.className='btn secondary compact';back.textContent='←';back.setAttribute('aria-label','Kembali ke halaman utama');back.title='Kembali ke halaman utama';back.style.marginTop='15px';back.style.width='62px';back.style.height='46px';back.style.fontSize='26px';back.style.fontWeight='900';back.style.background='#123e64';back.style.color='#ffffff';back.style.webkitTextFillColor='#ffffff';back.style.border='2px solid #80d9f0';back.style.display='inline-flex';back.style.alignItems='center';back.style.justifyContent='center';
+ const back=document.createElement('button');back.type='button';back.className='btn secondary compact';back.textContent='←';back.setAttribute('aria-label','Kembali ke halaman utama');back.title='Kembali ke halaman utama';back.style.marginTop='0';back.style.position='absolute';back.style.top='12px';back.style.left='12px';back.style.zIndex='8';back.style.width='62px';back.style.height='46px';back.style.fontSize='26px';back.style.fontWeight='900';back.style.background='#123e64';back.style.color='#ffffff';back.style.webkitTextFillColor='#ffffff';back.style.border='2px solid #80d9f0';back.style.display='inline-flex';back.style.alignItems='center';back.style.justifyContent='center';
  back.addEventListener('click',()=>{login.hidden=true;portal.hidden=false;window.scrollTo(0,0)});
- $('.loginbox')?.append(back);
+ const loginPanel=$('.loginright');if(loginPanel){loginPanel.style.position='relative';loginPanel.append(back);}
  portal.querySelectorAll('[data-public-go]').forEach(b=>b.addEventListener('click',()=>{
    const mode=b.dataset.publicGo;
    const learning=$('#publicLearning');
    if(mode==='learn'){games.hidden=true;learning.hidden=false;window.hcTraceInit?.();learning.scrollIntoView({behavior:'smooth',block:'start'});return;}
    learning.hidden=true;games.hidden=false;
-   games.querySelector('h2').textContent=mode==='stars'?'⭐ Jom kumpul bintang!':'🐠 Pilih Permainan!';
+   if(games.querySelector('h2'))games.querySelector('h2').textContent=mode==='stars'?'⭐ Jom kumpul bintang!':'🐠 Pilih Permainan!';
    games.scrollIntoView({behavior:'smooth',block:'start'});
  }));
  portal.querySelectorAll('[data-public-game]').forEach(b=>b.addEventListener('click',()=>{
@@ -993,5 +1133,245 @@ function setupSelectiveClassMove(){
  };
  reset();
 }
+</script>
+
+<script>
+/* Pemilihan kelas di Utama, tanpa mengganggu kamera bersama */
+(function(){
+ const oldDashboard=dashboard;
+ dashboard=async function(token){
+  await oldDashboard(token);
+  if(token!==viewToken)return;
+  const cards=document.querySelectorAll('#main [data-class]');
+  cards.forEach(b=>{
+   b.textContent='Masuk kelas →';
+   b.onclick=()=>{state.selectedClass=b.dataset.class;state.reviewClass=b.dataset.class;state.classEntered=true;go('students')};
+  });
+ };
+})();
+</script>
+
+<style id="cilik-class-navigation-style">
+@media screen {
+#nav[hidden]{display:none!important}
+.sidebar:has(#nav[hidden]){gap:12px}
+@media(max-width:760px){.sidebar:has(#nav[hidden]){padding:12px 16px}.sidebar:has(#nav[hidden]) .brand{font-size:23px}}
+}
+</style>
+
+<style id="cilik-class-navigation-polish">
+@media screen {
+  #homePage{order:99;white-space:nowrap}
+  #backPage{order:0}
+  #nav[hidden]{display:none!important}
+  .class-welcome{background:linear-gradient(120deg,#d7f7ff,#e9fbf6);border:1px solid #b9e6ee;border-radius:24px;padding:24px;margin-bottom:20px}
+  .class-welcome h1{font-size:clamp(23px,4vw,34px);color:#0b587c;margin:0 0 6px}
+  .class-welcome p{color:#38677d;font-size:13px}
+}
+</style>
+<script>
+/* Paparan khusus selepas memasuki kelas: nama kelas di atas, ucapan guru dan tiga menu. */
+(function(){
+ const oldGo=go;
+ function shortTeacherName(){
+  const t=state.teacher||{};
+  const raw=((t.primaryClassId||t.kelas_id)===state.selectedClass?t.nama_guru_1:t.nama_guru_2)||'Guru';
+  let name=String(raw).trim().replace(/^(cikgu|puan|encik)\s+/i,'').split(/\s+(?:bin|binti|bt|b\.)\s+/i)[0].trim();
+  return name||'Guru';
+ }
+ function polish(){
+  const inClass=!!state.classEntered&&state.page!=='dashboard'&&state.page!=='scan';
+  const topName=document.getElementById('teacherName');
+  const avatar=document.querySelector('.topbar .avatar');
+  const home=document.getElementById('homePage');
+  if(topName)topName.textContent=inClass?className(state.selectedClass):'TABIKA KEMAS HAZIM';
+  if(avatar)avatar.textContent='🏫';
+  if(home){home.textContent='🏠 Dashboard';home.title='Kembali ke pilihan dua kelas';}
+  if(!inClass)return;
+  const main=document.getElementById('main');if(!main)return;
+  const heading=main.querySelector('.pagehead');
+  if(heading){
+   heading.remove();
+   const greet=document.createElement('div');greet.className='class-welcome';
+   const title=document.createElement('h1');title.textContent='🐬 Selamat datang, Cikgu '+shortTeacherName()+'!';
+   const subtitle=document.createElement('p');subtitle.textContent='Pengurusan '+className(state.selectedClass)+' · Daftar Murid, Senarai Murid dan Laporan';
+   greet.append(title,subtitle);main.prepend(greet);
+  }
+  const nav=document.getElementById('nav');
+  if(nav){nav.querySelectorAll('[data-page]').forEach(b=>{if(!['add-student','students','reports'].includes(b.dataset.page))b.remove()});}
+ }
+ go=async function(page){await oldGo(page);polish()};
+ const oldStudents=students;
+ students=function(){oldStudents();polish()};
+ const oldDashboard=dashboard;
+ dashboard=async function(token){await oldDashboard(token);if(token!==viewToken)return;const heroTitle=document.querySelector('#main .hero h1');if(heroTitle)heroTitle.innerHTML='Selamat datang,<br><span style="color:var(--teal)">'+esc(state.teacher.nama)+'</span>';polish()};
+})();
+</script>
+
+<style id="cilik-nav-final-2026">
+@media screen {
+  /* Ikon navigasi kiri, nama kelas dan tetapan kanan */
+  .topbar{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:8px!important}
+  .topbar>.row{display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important;min-width:0;flex:1}
+  .topbar:has(.class-mode-marker) #homePage,
+  .topbar:has(.class-mode-marker) #backPage{order:-5!important;width:43px!important;min-width:43px!important;height:43px!important;padding:0!important;border-radius:50%!important;font-size:22px!important;line-height:1!important}
+  .topbar:has(.class-mode-marker) #homePage{order:-6!important}
+  .topbar:has(.class-mode-marker) .avatar{order:2!important;display:grid!important;flex-shrink:0;width:39px;height:39px;font-size:19px}
+  .topbar:has(.class-mode-marker) .row>div:has(#teacherName){order:3!important;flex:1;min-width:0!important;text-align:right}
+  .topbar:has(.class-mode-marker) #teacherName{font-size:clamp(10px,2.6vw,14px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+  .topbar:has(.class-mode-marker) #settingsShortcut{order:4!important;flex-shrink:0;width:43px;min-width:43px;height:43px;padding:0;border-radius:50%;font-size:19px}
+  .topbar:has(.class-mode-marker) #logout{display:none!important}
+  #nav.cilik-four-menu{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:4px!important}
+  #nav.cilik-four-menu[hidden]{display:none!important}
+  #nav.cilik-four-menu .navbtn{min-width:0;justify-content:center;text-align:center}
+  #nav.cilik-four-menu .navbtn.cilik-exit{color:#fff;background:#b23d59;border:1px solid #f8a6b4}
+  #nav.cilik-four-menu .navbtn.cilik-exit .navicon:after{content:'🚪'!important}
+  @media(max-width:760px){
+    .topbar:has(.class-mode-marker){padding:9px 9px!important}
+    .topbar:has(.class-mode-marker)>div:first-child{display:flex!important}
+    .topbar:has(.class-mode-marker) .row{gap:5px!important}
+    .topbar:has(.class-mode-marker) #homePage,.topbar:has(.class-mode-marker) #backPage{width:37px!important;min-width:37px!important;height:39px!important;font-size:20px!important}
+    .topbar:has(.class-mode-marker) .avatar{width:32px;height:32px;font-size:15px}
+    .topbar:has(.class-mode-marker) #settingsShortcut{width:37px;min-width:37px;height:39px}
+    #nav.cilik-four-menu .navbtn{font-size:10px!important;padding:7px 1px!important;min-height:60px!important}
+  }
+}
+</style>
+<script>
+/* Kemas kini UI sahaja: semua handler dan data Supabase asal dikekalkan. */
+(function(){
+  const oldGoFinal=go;
+  function updateClassNavigation(){
+    const header=document.querySelector('.topbar');
+    const nav=document.getElementById('nav');
+    const home=document.getElementById('homePage');
+    const back=document.getElementById('backPage');
+    const logout=document.getElementById('logout');
+    if(!header||!nav||!home||!back||!logout)return;
+    const inClass=Boolean(state.classEntered&&state.page!=='dashboard'&&state.page!=='scan');
+    let marker=header.querySelector('.class-mode-marker');
+    if(inClass){
+      if(!marker){marker=document.createElement('span');marker.className='class-mode-marker';marker.hidden=true;header.append(marker)}
+      home.textContent='🏠';home.title='Dashboard · Pilihan dua kelas';home.setAttribute('aria-label','Dashboard · Pilihan dua kelas');
+      back.textContent='←';back.title='Kembali';back.setAttribute('aria-label','Kembali');
+      /* Kekalkan ikon kembali boleh ditekan dalam kelas. */
+      back.hidden=false;
+      nav.classList.add('cilik-four-menu');
+      if(!nav.querySelector('.cilik-exit')){
+        const exit=document.createElement('button');exit.type='button';exit.className='navbtn cilik-exit';
+        exit.innerHTML='<span class="navicon" aria-hidden="true"></span><span>Tetapan</span>';
+        exit.setAttribute('aria-label','Buka tetapan kelas');
+        exit.addEventListener('click',()=>document.getElementById('settingsShortcut')?.click());
+        nav.append(exit);
+      }
+    }else{
+      if(marker)marker.remove();
+      nav.classList.remove('cilik-four-menu');
+      nav.querySelector('.cilik-exit')?.remove();
+      home.textContent='🏠 Dashboard';home.title='Kembali ke pilihan dua kelas';
+      back.textContent='← Kembali';back.title='Kembali';
+    }
+  }
+  go=async function(page){
+    await oldGoFinal(page);
+    updateClassNavigation();
+  };
+  /* Pemilihan kelas dan log masuk memanggil go(), jadi susun atur disegarkan automatik. */
+})();
+</script>
+
+
+<style id="cilik-home-header-cleanup">
+@media screen {
+  /* Di halaman Utama/imbas: hanya butang Keluar di hujung kanan. */
+  .topbar:not(:has(.class-mode-marker)) .avatar,
+  .topbar:not(:has(.class-mode-marker)) .row>div:has(#teacherName),
+  .topbar:not(:has(.class-mode-marker)) #settingsShortcut,
+  .topbar:not(:has(.class-mode-marker)) #homePage,
+  .topbar:not(:has(.class-mode-marker)) #backPage {display:none!important}
+  .topbar:not(:has(.class-mode-marker)) .row {justify-content:flex-end!important;flex:1!important}
+  .topbar:not(:has(.class-mode-marker)) #logout {margin-left:auto!important;order:99!important;width:45px!important;height:45px!important;min-width:45px!important;padding:0!important;border-radius:50%!important;font-size:23px!important;display:grid!important;place-items:center!important}
+  @media(max-width:760px){.topbar:not(:has(.class-mode-marker)) {padding:10px 16px!important}}
+}
+</style>
+<script>
+/* Pastikan butang log keluar pada halaman Utama menjadi ikon pintu sahaja. */
+(function(){
+ const originalGo=go;
+ function refreshHomeHeader(){
+  const logout=document.getElementById('logout');if(!logout)return;
+  const inClass=Boolean(state.classEntered&&state.page!=='dashboard'&&state.page!=='scan');
+  logout.textContent='🚪';
+  logout.title='Log keluar';logout.setAttribute('aria-label','Log keluar');
+ }
+ go=async function(page){await originalGo(page);refreshHomeHeader()};
+ const originalDashboard=dashboard;
+ dashboard=async function(token){await originalDashboard(token);refreshHomeHeader()};
+ document.addEventListener('DOMContentLoaded',refreshHomeHeader);
+})();
+</script>
+
+
+<style id="cilik-profile-one-teacher-final">
+@media screen {
+ .topbar:has(.class-mode-marker) .avatar{display:none!important}
+}
+</style>
+
+<style id="cilik-header-center-and-settings-bottom">
+@media screen {
+ /* Kelas: kiri ikon rumah dan kembali, tengah nama kelas, kanan ikon keluar */
+ .topbar:has(.class-mode-marker) .row {position:relative!important;width:100%!important;flex:1!important;min-height:44px!important;justify-content:flex-start!important}
+ .topbar:has(.class-mode-marker) .row>div:has(#teacherName) {position:absolute!important;left:50%!important;transform:translateX(-50%)!important;top:50%!important;translate:0 -50%!important;width:max-content!important;max-width:45%!important;flex:none!important;text-align:center!important;order:0!important;pointer-events:none}
+ .topbar:has(.class-mode-marker) #teacherName {text-align:center!important;font-size:clamp(10px,2.8vw,15px)!important;font-weight:800!important}
+ .topbar:has(.class-mode-marker) #settingsShortcut {display:none!important}
+ .topbar:has(.class-mode-marker) #logout {display:grid!important;place-items:center!important;position:relative!important;order:99!important;margin-left:auto!important;width:43px!important;min-width:43px!important;height:43px!important;border-radius:50%!important;padding:0!important;font-size:23px!important}
+ #nav.cilik-four-menu .navbtn.cilik-exit {background:transparent!important;color:inherit!important;border:1px solid transparent!important}
+ #nav.cilik-four-menu .navbtn.cilik-exit .navicon:after {content:'⚙️'!important}
+ #nav.cilik-four-menu .navbtn.cilik-exit.active {background:#ffe06a!important;color:#092c4b!important}
+ @media(max-width:760px){
+  .topbar:has(.class-mode-marker) #logout {width:39px!important;min-width:39px!important;height:39px!important;font-size:21px!important}
+  .topbar:has(.class-mode-marker) .row>div:has(#teacherName){max-width:42%!important}
+ }
+}
+</style>
+
+<style id="cilik-fix-class-header-controls">
+@media screen {
+ .topbar:has(.class-mode-marker){display:flex!important;visibility:visible!important}
+ .topbar:has(.class-mode-marker)>.row:first-child{display:flex!important;align-items:center!important;gap:7px!important}
+ .topbar:has(.class-mode-marker) #homePage{display:grid!important;place-items:center!important;order:1!important}
+ .topbar:has(.class-mode-marker) #backPage{display:grid!important;place-items:center!important;order:2!important}
+ .topbar:has(.class-mode-marker) #logout{display:grid!important;place-items:center!important;order:99!important;margin-left:auto!important}
+ .topbar:has(.class-mode-marker) .row>div:has(#teacherName){display:block!important;visibility:visible!important}
+}
+</style>
+
+<style id="cilik-dashboard-header-overlay-fix">
+@media screen {
+  /* Halaman utama: tiada jalur header kosong; ikon keluar berada di atas animasi laut. */
+  body.cilik-dashboard-view .content{position:relative!important}
+  body.cilik-dashboard-view .topbar{position:absolute!important;top:0!important;left:0!important;right:0!important;height:0!important;min-height:0!important;padding:0!important;margin:0!important;border:0!important;background:transparent!important;z-index:35!important;overflow:visible!important}
+  body.cilik-dashboard-view .topbar>.row{position:absolute!important;top:0!important;right:0!important;width:auto!important;min-height:0!important;display:flex!important;justify-content:flex-end!important;overflow:visible!important}
+  body.cilik-dashboard-view .topbar #logout{position:relative!important;display:grid!important;place-items:center!important;margin:0!important;width:45px!important;height:45px!important;min-width:45px!important;border-radius:50%!important;box-shadow:0 3px 9px #001a2b66!important}
+  body.cilik-dashboard-view main{position:relative!important}
+  body.cilik-dashboard-view .topbar .avatar,body.cilik-dashboard-view .topbar #teacherName,body.cilik-dashboard-view .topbar #settingsShortcut,body.cilik-dashboard-view .topbar #backPage,body.cilik-dashboard-view .topbar #homePage{display:none!important}
+  @media(max-width:760px){body.cilik-dashboard-view .topbar>.row{top:23px!important;right:34px!important}}
+}
+</style>
+<script id="cilik-dashboard-header-state-fix">
+(function(){
+  function syncDashboardHeader(){
+    const isDashboard=Boolean(!state.classEntered && state.page==='dashboard');
+    document.body.classList.toggle('cilik-dashboard-view',isDashboard);
+    const logout=document.getElementById('logout');
+    if(logout && isDashboard){logout.textContent='🚪';logout.title='Log keluar';logout.setAttribute('aria-label','Log keluar');}
+  }
+  const previousGo=go;
+  go=async function(page){await previousGo(page);syncDashboardHeader()};
+  const previousDashboard=dashboard;
+  dashboard=async function(token){await previousDashboard(token);syncDashboardHeader()};
+  document.addEventListener('DOMContentLoaded',syncDashboardHeader);
+})();
 </script>
 </body></html>
